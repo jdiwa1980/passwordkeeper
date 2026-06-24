@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import "nes.css/css/nes.css";
+$shadow: -0.6rem 0.6rem 0 rgba(29, 30, 28, 0.26);
+
+* { font-family: "Press Start 2P", system-ui; }
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color:  #f3f3f3;
+  margin: 0;
+  overflow-x: hidden;
+  
+}
+
+// tags styling
+
+input, button, textarea {
+  border: 2px solid rgba(0,0,0,0.6);
+  background-image: none;
+  background-color: #dadad3;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  padding: 5px;
+
+  &:focus {
+        outline: none;
+    }
+}
+
+textarea {
+  min-height: 50px;
+  resize: vertical;
+}
+
+header {
+  background: white;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 0 rgba(0,0,0,0.15);
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+
+// classname css styles
+.feedback {
+
+  &-card {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white; /* Black with 50% opacity */
+    z-index: 50;
+
+    border: 1px solid black;
+    width: 90%;
+    max-width: 500px;
+    
+    
+    box-shadow: $shadow;
+  }
+  &-cardtable {
+    border: 1px solid black;
+    max-width: 1200px;
+    background-color: #fff;
+    margin: 0 auto;
+    box-shadow: $shadow;
+  }
+  &-header {
+    text-align: center;
+    padding: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    border-bottom: 1px solid black;
+  }
+  &-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+  }
+  
+  &-body button {
+      align-self: center;
+      width: fit-content;
+  }
+  
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.75); /* Black with 75% opacity */
+  z-index: 40;
+}
+
+// additional scss after template
+.password-field {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.password-field input {
+    width: 100%;
+    padding-right: 40px;
+}
+
+.password-field button {
+    position: absolute;
+    right: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    box-shadow: none;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.success {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: green;
+    animation: fadeIn 0.3s ease;
+}
+
+.social-buttons {
+  text-align: center;
+}
+
+.share {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.brand-logo {
+  transform: scale(0.7);
+  margin-right: 4px;
+  margin-bottom: -4px;
+}
+
+.nav-brand h1 {
+  display: flex;
+  align-items:end;
+  gap: 10px
+}
+
+// mobile menu styling
+.mobile-overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.5);
+
+  z-index: 80;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  width: 280px;
+  height: 100vh;
+
+  background: whitesmoke;
+  border-left: 1px solid wheat;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+
+  padding: 5rem 1rem 1rem;
+
+  z-index: 90;
+}
+
+.mobile-options {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.mobile-brand {
+  text-align: center;
+}
+
+.mobile-button {
+  display: none;
+  background: none;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.menu-icon.add {
+  color: #4caf50;
+}
+
+.menu-icon.search {
+  color: #2196f3;
+}
+
+.menu-icon.records {
+  color: #ff9800;
+}
+
+.menu-icon.favorites {
+  color: #ffd700;
+}
+
+.menu-icon.lock {
+  color: #f44336;
+}
+
+// styling for the tables
+.container {
+  max-width:1200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.keeper {
+  &-cardtable {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+.keeper-cardtable td {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+.nes-table {
+    width: 100%;
+}
+
+.nes-table-responsive {
+  overflow-x: auto;
+}
+
+.password-cell {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.password-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+}
+
+.keeper-cardtable th:nth-child(1),
+.keeper-cardtable td:nth-child(1) {
+  width: 8%;
+}
+
+.keeper-cardtable th:nth-child(2),
+.keeper-cardtable td:nth-child(2) {
+  width: 26%;
+}
+
+.keeper-cardtable th:nth-child(3),
+.keeper-cardtable td:nth-child(3) {
+  width: 16%;
+  
+}
+
+th:nth-child(4),
+td:nth-child(4) {
+    width: auto;
+}
+
+th:nth-child(5),
+td:nth-child(5) {
+    width: 10%;
+}
+// mobile responsive styles
+@media (max-width: 768px) {
+  .nes-table {
+    font-size: 0.55rem;
+  }
+
+  .nes-table th,
+  .nes-table td {
+    padding: 0.25rem;
+  }
+  .actions button {
+    padding: 0.25rem;
+    min-width: auto;
+  }
+  .nes-table {
+    font-size: 0.55rem;
+    table-layout: auto; /* Overrides the fixed layout so columns adjust to content */
+  }
+  
+  /* Reset explicit widths so columns can shrink naturally */
+  .keeper-cardtable th, 
+  .keeper-cardtable td {
+    width: auto !important; 
+  }
+
+  .nav-bar {
+    position: relative;
+    min-height: 60px;
+  }
+
+  .mobile-button {
+    display: block;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 100;
+    
+  }
+
+  .container {
+    display: none;
+  }
+}
+
+
