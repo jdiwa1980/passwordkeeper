@@ -1,7 +1,54 @@
-import usermodel from "../models/usermodel"; // watch out later for folder spelling
-import bcrypt from "bcryptjs";
+const User = require("../models/userModel");
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 
-export const registerUser = async (req, res) => {
+const loginUser = async (req, res) => {
+    try {
+        const { email, password } = req.body;
+
+        const user = await User.findOne({ email });
+
+        if (!user) {
+            return res.status(401).json({
+                message: "Invalid email or password",
+            });
+        }
+
+        const isMatch = await bcrypt.compare(
+            password,
+            user.password
+        );
+
+        if (!isMatch) {
+            return res.status(401).json({
+                message: "Invalid email or password",
+            });
+        }
+
+        const token = jwt.sign(
+            {
+                userId: user._id
+            },
+            process.env.JWT_SECRET,
+            {
+                expiresIn: "7d",
+            }
+        );
+
+        res.status(200).json({
+            token,
+            _id: user.id,
+            username: user.username,
+            email: user.email,
+        })
+    } catch (err) {
+        res.status(500).json({
+            message: err.message
+        })
+    }
+}
+
+const registerUser = async (req, res) => {
         try {
             const { username, email, password} = req.body;
 
@@ -22,7 +69,11 @@ export const registerUser = async (req, res) => {
                 password: hashedPassword,
             });
             
-            res.status(201).json(user);
+            res.status(201).json({
+                _id: user._id,
+                username: user.username,
+                email: user.email,
+            });
 
         } catch (err) {
             res.status(500).json({
@@ -33,4 +84,5 @@ export const registerUser = async (req, res) => {
 
 module.exports = {
     registerUser,
+    loginUser
 };

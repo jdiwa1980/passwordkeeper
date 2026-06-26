@@ -7,7 +7,7 @@ const getRecords = async (rerq, res) => {
     res.json(records);
 }
 
-const CreateRecord = async (req, res) => {
+const createRecord = async (req, res) => {
     const record = await  Record.create(req.body);
 
     res.status(201).json(record);
@@ -63,7 +63,7 @@ const deleteRecord = async (req, res) => {
 
 module.exports = {
     getRecords,
-    CreateRecord,
+    createRecord,
     updateRecord,
     deleteRecord,
 };
