@@ -1,16 +1,59 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# PasswordKeeper 🔐
 
-Currently, two official plugins are available:
+A full-stack password management application built with React, Express, MongoDB, and JWT authentication.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+* User registration and login
+* Secure password hashing with bcrypt
+* JWT authentication
+* Protected routes
+* User-specific password vault
+* Create, Read, Update, Delete (CRUD) records
+* Responsive retro interface using NES.css
+* Delete confirmation modal
+* Loading states for authentication
+* Empty vault state for new users
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the ESLint configuration
+### Frontend
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* React
+* React Router
+* Axios
+* SCSS
+* NES.css
+
+### Backend
+
+* Node.js
+* Express
+* MongoDB
+* Mongoose
+* JWT
+* bcrypt
+
+## Future Improvements
+
+* Search records
+* Favorite records
+* Password generator
+* Copy password to clipboard
+* Hide/Show password improvements
+* Categories and tags
+* Encryption of stored passwords
+* Dark/Light mode
+* Deploy to Render/Vercel
+
+## Version History
+
+### v1.0 6/30/2026
+
+* Initial full-stack release
+* Authentication
+* Protected CRUD operations
+* User-specific vault
+* Responsive UI
+

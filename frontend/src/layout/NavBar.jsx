@@ -8,9 +8,10 @@ import {
   FaLock
 } from "react-icons/fa";
 import Button from "../components/Button";
+import { login } from "../api/authApi";
 
-const NavBar = ({ onContactClick, onMobileClick }) => {
-
+const NavBar = ({ onContactClick, onMobileClick, onLogOut, username }) => {
+        
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
 
@@ -104,6 +105,13 @@ const NavBar = ({ onContactClick, onMobileClick }) => {
                             </a>    
                         ))}
                     </div>
+                    <div className="user-info">
+                        Welcome, <strong>{username}</strong>
+                    </div>
+                    <button className="nes-btn is-error"
+                            onClick={onLogOut}
+                    
+                    >Logout</button>
                     <Button 
                        className="nes-btn is-primary"
                        content="ADD"

@@ -6,7 +6,7 @@ import { iconList } from "../data/icon_data";
 import { useEffect, useState } from "react";
 
 const KeeperCards = ({ records, onEdit, onDelete  }) => {
-    const [isEditing, SetIsEditing] = useState(false)
+    // const [isEditing, SetIsEditing] = useState(false)
     const [visiblePasswords, setVisiblePasswords] = useState({});
 
     const getIcon = (description) => {
@@ -28,18 +28,31 @@ const KeeperCards = ({ records, onEdit, onDelete  }) => {
         }))
     }
 
+    if (records.length === 0) {
+        return (
+            <div className="empty-state">
+                <div className="nes-container is-rounded with-title is-centered">
+                    <p className="title">Your Vault</p>
+                    <i className="nes-octocat animate"></i>
+                    <p>Your vault is empty.</p>
+                    <p>Click <strong>Add</strong> to save your first password</p>
+                </div>
+            </div>
+        )
+    }
+
     return (  
         <section className="keeper-cardtable">
             <div className="nes-table-responsive">
                 <table className="nes-table is-bordered is-centered">
                     <thead>
-                    <tr>
-                        <th>Icon</th>
-                        <th>Account/Username</th>
-                        <th>password</th>
-                        <th>Description</th>
-                        <th>Edit</th>
-                    </tr>
+                        <tr>
+                            <th>Icon</th>
+                            <th>Account/Username</th>
+                            <th>password</th>
+                            <th>Description</th>
+                            <th>Edit</th>
+                        </tr>
                     </thead>
                     <tbody>
                     {records.map((item, index) => (
@@ -67,7 +80,7 @@ const KeeperCards = ({ records, onEdit, onDelete  }) => {
                                     <FaPencil />
                                 </button>
                                 <button type="button"
-                                        onClick={() => onDelete(item._id)}
+                                        onClick={() => onDelete(item)}
                                 >              
                                         <FaTrash />
                                 </button>

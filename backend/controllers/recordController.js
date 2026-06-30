@@ -1,14 +1,26 @@
 const Record = require("../models/Record");
 const mongoose = require("mongoose");
 
-const getRecords = async (rerq, res) => {
-    const records = await Record.find();
+const getRecords = async (req, res) => {
+    const records = await Record.find({
+        owner: req.user.userId
+    });
 
     res.json(records);
 }
 
 const createRecord = async (req, res) => {
-    const record = await  Record.create(req.body);
+
+    const { account, password, description} = req.body
+
+    console.log("REQ USER:", req.user);
+
+    const record = await  Record.create({
+        account,
+        password,
+        description,
+        owner: req.user.userId,
+    });
 
     res.status(201).json(record);
 }
@@ -23,11 +35,13 @@ const updateRecord = async (req, res) => {
     }
 
     const record = await Record.findByIdAndUpdate(
-        req.params.id,
-        req.body,
         {
-        new: true,
-        }
+            _id: req.params.id,
+            owner: req.user.userId,
+
+        },
+        req.body,
+        { new: true}
     );
 
     if (!record) {

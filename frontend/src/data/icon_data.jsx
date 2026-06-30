@@ -1,4 +1,16 @@
-import { FaFacebook, FaGithub, FaWifi, FaLinkedin, FaYahoo, FaYoutube, FaApple, FaTwitter, FaGlobe, FaPlaystation  } from "react-icons/fa";
+import { 
+        FaFacebook, 
+        FaGithub, 
+        FaWifi, 
+        FaLinkedin, 
+        FaYahoo, 
+        FaYoutube, 
+        FaApple, 
+        FaTwitter, 
+        FaGlobe, 
+        FaPlaystation, 
+        FaSteam,
+      } from "react-icons/fa";
 import { BiLogoGmail } from "react-icons/bi";
 import { RiNetflixFill } from "react-icons/ri";
 
@@ -47,6 +59,10 @@ export const iconList = [
         keywords: ["playstation", "ps2", "ps3", "ps4", "ps5"],
         icon: <FaPlaystation size={25}/>
 ,
+    },
+    {
+        keywords: ["steam", "Steam" ],
+        icon: <FaSteam size={25}/>,
     },
     {
         keywords: [""],
