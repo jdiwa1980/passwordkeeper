@@ -9,7 +9,13 @@ const app = express();
 
 connectDB();
 
-app.use(cors());
+app.use(cors({
+    origin: [
+        "http://localhost:5173",
+        "https://passwordkeeper-mu.vercel.app/"
+    ],
+    credentials: true
+}));
 app.use(express.json());
 
 app.use("/api/records", require("./routes/recordRoutes"));
