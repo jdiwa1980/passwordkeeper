@@ -7,10 +7,11 @@ import {
   FaStar,
   FaLock
 } from "react-icons/fa";
+import { TbLockPassword } from "react-icons/tb";
 import Button from "../components/Button";
 import { login } from "../api/authApi";
 
-const NavBar = ({ onContactClick, onMobileClick, onLogOut, username }) => {
+const NavBar = ({ onContactClick, onMobileClick, onSearchClick, onAllClick, onFavoriteClick, onLockClick, onLogOut, username }) => {
         
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
@@ -38,29 +39,29 @@ const NavBar = ({ onContactClick, onMobileClick, onLogOut, username }) => {
 
     const options = [
         {
-            label:"Add Record",
+            label:"Add ",
             icon: <FaPlus className="menu-icon add"/>,
             onClick: onContactClick
         },
         {
             label:"Search",
             icon: <FaSearch className="menu-icon search"/>,
-            onClick:onMobileClick
+            onClick: onSearchClick
         },
         {
-            label:"All Records",
+            label:"All",
             icon: <FaList className="menu-icon records"/>,
-            onClick:onMobileClick
+            onClick:onAllClick
         },
         {
             label:"Favorites",
-            icon: <FaStar className="menu-icon favorites"/>,
-            onClick:onMobileClick
+            icon: <i class="nes-icon is-small star"></i>,
+            onClick:onFavoriteClick
         },
         {
-            label:"Lock Vault",
+            label:"Lock",
             icon: <FaLock className="menu-icon lock"/>,
-            onClick:onMobileClick
+            onClick:onLockClick
         },
 
     ]
@@ -80,17 +81,38 @@ const NavBar = ({ onContactClick, onMobileClick, onLogOut, username }) => {
                 >
                     {isMobileMenuOpen ? <RxCross2 size={30} className="text-gray-500"/> : <RxHamburgerMenu size={30} />}
                 </button>
+                <div className="mobile-logo">
+                    <i><TbLockPassword size={35}/></i>
+                    <h1>password keeper</h1>
+                </div>
+                
             <div className="container">
                 <div className="nav-brand">
                     <a href="https://neildiwa.vercel.app/">
                         <h1>
+                            
                             <i className="nes-mario brand-logo"></i>
                              Password Keeper
                         </h1>
                     </a>
-                    <p>© {currentYear} neildiwa. All rights reserved.</p>
+                    <p>© {currentYear} neildiwa.</p>
                 </div>
-                
+                <div className="nav-options">
+                    <ul className="nav-list">
+                        {options.map((item, idx) => (
+                            <li key={idx}>
+                                <i>{item.icon}</i>
+                                <a
+                                key={idx}
+                                onClick={item.onClick}
+                            >   
+                                {item.label}
+                            </a>
+                            
+                            </li>
+                        ))}
+                    </ul>
+                </div>                
                 <div className="social-buttons">
                     <p>Share on SNS</p>
                     <div className="share">
@@ -111,12 +133,14 @@ const NavBar = ({ onContactClick, onMobileClick, onLogOut, username }) => {
                     <button className="nes-btn is-error"
                             onClick={onLogOut}
                     
-                    >Logout</button>
-                    <Button 
+                    >
+                        Logout
+                    </button>
+                    {/* <Button 
                        className="nes-btn is-primary"
                        content="ADD"
                        onClick={onContactClick}
-                    />
+                    /> */}
                 </div>
             </div>
             {/* mobile menu links */}

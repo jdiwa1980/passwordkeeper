@@ -38,7 +38,7 @@ export const deleteRecord = (id) => {
         }
     )
         .then(response => {
-            console.log(response.data);
+    
         })
         .catch(err => {
             console.error("API Error:", err.message)

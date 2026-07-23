@@ -11,12 +11,11 @@ const getRecords = async (req, res) => {
 
 const createRecord = async (req, res) => {
 
-    const { account, password, description} = req.body
-
-    console.log("REQ USER:", req.user);
+    const { account, iconKey, password, description} = req.body
 
     const record = await  Record.create({
         account,
+        iconKey,
         password,
         description,
         owner: req.user.userId,

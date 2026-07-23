@@ -57,3 +57,12 @@ A full-stack password management application built with React, Express, MongoDB,
 * User-specific vault
 * Responsive UI
 
+# 7/15/26
+
+* no logo on left side of navbar on mobile : DONE
+* fix layout in deleteModal : DONE
+
+# 7/24/26
+
+* added navlinks on navbar
+* added lock vault

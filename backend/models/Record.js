@@ -6,6 +6,10 @@ const recordSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
+        iconKey: {
+            type: String,
+            default: "",
+        },
 
         password: {
             type: String,
@@ -15,6 +19,11 @@ const recordSchema = new mongoose.Schema(
         description: {
             type: String,
             required: true,
+        },
+
+        favorite: {
+            type: Boolean,
+            default:false,
         },
         
         owner: {

@@ -1,27 +1,35 @@
 import { useEffect, useState } from "react";
 import InputField from "../components/inputField";
-import { FaCheck } from "react-icons/fa";
+import { FaCheck, FaGlobe } from "react-icons/fa";
 import { RxCross2 } from "react-icons/rx";
+import IconPicker from "../components/iconpicker";
 
 
 const RetroForm = ({ isOpen, onClose, editingRecord, onAdd, onEdit }) => {
     
     const [formData, setFormData] = useState({
         account: "",
+        iconKey: "",
         password: "",
         confirmPw: "",
         description: "",
     })
 
-    // console.log(editingRecord)
-
     const [ error, setError ] = useState("");
     const [ success, setSuccess ] = useState("")
+
+    const tooltip = [
+        {
+            description: "write other information here..."
+        }
+    ]
+    
 
     //helper function
     const resetForm = () => {
         setFormData({
                 account: "",
+                iconKey: "",
                 password: "",
                 confirmPw: "",
                 description: "",
@@ -85,23 +93,38 @@ const RetroForm = ({ isOpen, onClose, editingRecord, onAdd, onEdit }) => {
         >
             <div className="nes-field">
                 <button onClick={onClose}>
-                    <RxCross2 size={24} />
+                    {/* <RxCross2 size={24} /> */}
+                    [x]
                 </button>
                 <label htmlFor="account">ENTER ACCOUNT/PW</label>
                 {/* <div className="feedback-header">
                     ENTER ACCOUNT / PW
                 </div> */}
                 <form onSubmit={handleSubmit} className="feedback-body" autoComplete="off">
+                    <p className="field-title">Account Name</p>
+                    <div className="account-wrapper">
+                            
+                            <IconPicker 
+                                value={formData.iconKey}
+                                onChange={(iconKey) =>
+
+                                    setFormData(prev => ({
+                                        ...prev,
+                                        iconKey
+
+                                    }))}
+                            />
+                            <input type="text" 
+                                className="nes-input account-input"
+                                placeholder=" name of account"
+                                autoComplete=""
+                                value={formData.account}
+                                onChange={(e) => setFormData({...formData, account: e.target.value})}
+                                required   
+                            />
+                    </div>
                     
-                    <input type="text" 
-                        className="nes-input"
-                        placeholder="name of account"
-                        autoComplete=""
-                        value={formData.account}
-                        onChange={(e) => setFormData({...formData, account: e.target.value})}
-                        required   
-                    />
-                    
+                    <p className="field-title">Password</p>
                     <InputField  
                                 value={formData.password}
                                 onChange={(e) => 
@@ -113,7 +136,7 @@ const RetroForm = ({ isOpen, onClose, editingRecord, onAdd, onEdit }) => {
                                 className="nes-input"
                                 required
                     />
-
+                    <p className="field-title">Confirm Password</p>
                     <InputField   
                                 value={formData.confirmPw}
                                 onChange={(e) => 
@@ -125,6 +148,10 @@ const RetroForm = ({ isOpen, onClose, editingRecord, onAdd, onEdit }) => {
                                 placeholder="confirm pw"
                                 className="nes-input"
                     />
+                    <label className="field-title">
+                            Description
+                            <span className="tool-tip">{tooltip[0].description}</span>
+                    </label>
                     <textarea type="text" 
                             className="nes-textarea" 
                             placeholder="comments"
@@ -133,11 +160,15 @@ const RetroForm = ({ isOpen, onClose, editingRecord, onAdd, onEdit }) => {
                             onChange={(e) => setFormData({...formData, description: e.target.value})}
                             required
                     >
-
+                        
                     </textarea>
+                    
                     {success && <p className="nes-text is-success"><FaCheck />{success}</p>}
                     {error && <p className="nes-text is-error">{error}</p>}
-                    <button className="nes-btn is-primary">{editingRecord ? "UPDATE" : "SAVE"}</button>
+                    <button 
+                        className="nes-btn is-primary"
+                        
+                    >{editingRecord ? "UPDATE" : "SAVE"}</button>
                 </form>
             </div>
         </div>
