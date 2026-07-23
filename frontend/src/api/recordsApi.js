@@ -4,7 +4,7 @@ const API_URL = import.meta.env.VITE_API_URL;
 
 const getToken = () => localStorage.getItem("token");
 
-export const getRecords = () => axios.get(API_URL, {
+export const getRecords = () => axios.get(`${API_URL}/records`, {
     headers: {
         Authorization: `Bearer ${getToken()}`
     }
@@ -13,7 +13,7 @@ export const getRecords = () => axios.get(API_URL, {
 );
 
 export const createRecord = (data) => 
-    axios.post(API_URL, data, {
+    axios.post(`${API_URL}/records`, data, {
     headers: {
         Authorization: `Bearer ${getToken()}`
             }
