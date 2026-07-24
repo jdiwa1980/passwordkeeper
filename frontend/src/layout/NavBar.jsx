@@ -165,16 +165,15 @@ const NavBar = ({ onContactClick, onMobileClick, onSearchClick, onAllClick, onFa
                             </li>
                             
                         ))}
+                        <div className="user-info">
+                            Welcome, <strong>{username}</strong>
+                        </div>
+                        <button className="nes-btn is-error"
+                                onClick={onLogOut}
+                        >
+                            Logout
+                        </button>
                     </div>
-                    <div className="user-info">
-                        Welcome, <strong>{username}</strong>
-                    </div>
-                    <button className="nes-btn is-error"
-                            onClick={onLogOut}
-                    >
-                        Logout
-                    </button>
-
                 </div>
 
             )}
