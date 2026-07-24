@@ -400,10 +400,11 @@ main {
   justify-content:center;
   list-style: none;
   gap: 2rem;
+  color: #d0d0d0;
 }
 
 .mobile-options li:hover {
-  color: #d0d0d0;
+  color:#92cc41;
   transform: translateY(1px);
   transition: transform .15s ease;
   list-style: none;
@@ -824,7 +825,7 @@ label:hover .tool-tip {
     flex-direction: column;
   }
   .accordion-group {
-    width: calc(100% - 5rem);
+    width: calc(100% - 3rem);
     overflow:hidden;
   }
   .nes-table {
