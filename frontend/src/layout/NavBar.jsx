@@ -171,7 +171,6 @@ const NavBar = ({ onContactClick, onMobileClick, onSearchClick, onAllClick, onFa
                     </div>
                     <button className="nes-btn is-error"
                             onClick={onLogOut}
-                    
                     >
                         Logout
                     </button>
