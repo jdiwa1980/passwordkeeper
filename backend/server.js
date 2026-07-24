@@ -17,7 +17,8 @@ app.use("/api/auth", authRoutes)
 
 app.get("/version", (req, res) => {
     res.json({
-        version: "July 25 5:15AM"
+        version: "July 25 5:15AM",
+        message: "hello world",
     });
 });
 
