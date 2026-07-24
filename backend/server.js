@@ -12,7 +12,7 @@ connectDB();
 app.use(cors({
     origin: [
         "http://localhost:5173",
-        "https://passwordkeeper-mu.vercel.app/"
+        "https://passwordkeeper-mu.vercel.app/",
     ],
     credentials: true
 }));
