@@ -15,6 +15,12 @@ app.use(express.json());
 app.use("/api/records", require("./routes/recordRoutes"));
 app.use("/api/auth", authRoutes)
 
+app.get("/version", (req, res) => {
+    res.json({
+        version: "July 25 5:15AM"
+    });
+});
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
