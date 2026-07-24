@@ -825,8 +825,9 @@ label:hover .tool-tip {
     flex-direction: column;
   }
   .accordion-group {
-    width: calc(100% - 4rem);
-    overflow:hidden;
+    width: 400px;
+    // width: calc(100% - 1rem);
+    // overflow:hidden;
   }
   .nes-table {
     font-size: 0.55rem;
@@ -890,7 +891,29 @@ label:hover .tool-tip {
 
   summary {
     padding: 2px;
+    
   }
+
+  .accountname {
+    overflow: hidden;
+    overflow-wrap: break-word
+  }
+
+  .logout {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .logout svg {
+    color: #d0d0d0;
+  }
+  
+  .logout svg:hover {
+    color: #92cc41;
+    transform:translateY(1.5px);
+    transition: transform .15s ease;
+  } 
 }
 
 

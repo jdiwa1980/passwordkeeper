@@ -101,7 +101,7 @@ const Accordion = ({ search, records, onEdit, onDelete, lastItemRef, onFavorite 
                     >
                         <summary>
                             <span>{getRecordIcon(item)}</span>
-                            <span>{item.account}</span>
+                            <span className="accountname">{item.account}</span>
                             <span className="arrow">
                                 <FaChevronDown />
                             </span>

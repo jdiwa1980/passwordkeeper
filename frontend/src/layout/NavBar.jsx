@@ -8,6 +8,7 @@ import {
   FaLock
 } from "react-icons/fa";
 import { TbLockPassword } from "react-icons/tb";
+import { CiLogout } from "react-icons/ci";
 import Button from "../components/Button";
 import { login } from "../api/authApi";
 
@@ -165,15 +166,16 @@ const NavBar = ({ onContactClick, onMobileClick, onSearchClick, onAllClick, onFa
                             </li>
                             
                         ))}
+                    </div>
+                    <div className="logout">
                         <div className="user-info">
                             Welcome, <strong>{username}</strong>
                         </div>
-                        <button className="nes-btn is-error"
-                                onClick={onLogOut}
-                        >
-                            Logout
-                        </button>
+                        <a onClick={onLogOut}>
+                           < CiLogout size={25}/>
+                        </a>
                     </div>
+                    
                 </div>
 
             )}
