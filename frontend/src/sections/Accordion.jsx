@@ -132,7 +132,7 @@ const Accordion = ({ search, records, onEdit, onDelete, lastItemRef, onFavorite 
                                         </span>
                                         <button type="button"
                                                 onClick={() => togglePassword(idx)}
-                                        >{visiblePasswords[idx] ? <FaEyeSlash /> : <FaEye /> }</button>
+                                        >{visiblePasswords[idx] ? <FaEyeSlash size={20}/> : <FaEye size={20} /> }</button>
                                     </div>
 
                                 </div>
@@ -146,20 +146,20 @@ const Accordion = ({ search, records, onEdit, onDelete, lastItemRef, onFavorite 
                                         onClick={() => onFavorite(item)}
                                 >
                                     {item.favorite
-                                        ? <FaStar color="#FFD700"/>
-                                        : <FaRegStar />
+                                        ? <FaStar size={25} color="#FFD700"/>
+                                        : <FaRegStar size={25}/>
                                     }
 
                                 </button>
                                 <button type="button"
                                         onClick={() => onEdit(item)}
                                 >
-                                    <FaPencil />
+                                    <FaPencil size={25}/>
                                 </button>
                                 <button type="button"
                                         onClick={() => onDelete(item)}
                                 >              
-                                        <FaTrash />
+                                        <FaTrash size={25}/>
                                 </button>
                             </div>
                         </div>
