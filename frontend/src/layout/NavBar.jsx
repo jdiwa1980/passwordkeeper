@@ -79,7 +79,7 @@ const NavBar = ({ onContactClick, onMobileClick, onSearchClick, onAllClick, onFa
                     onClick={() => setIsMobileMenuOpen((prev) => !prev)}
                     className="mobile-button"
                 >
-                    {isMobileMenuOpen ? <RxCross2 size={30} className="text-gray-500"/> : <RxHamburgerMenu size={30} />}
+                    {isMobileMenuOpen ? <RxCross2 size={30} style={{ color: "white" }}/> : <RxHamburgerMenu size={30} />}
                 </button>
                 <div className="mobile-logo">
                     <i><TbLockPassword size={35}/></i>
@@ -146,7 +146,7 @@ const NavBar = ({ onContactClick, onMobileClick, onSearchClick, onAllClick, onFa
             {/* mobile menu links */}
             {isMobileMenuOpen && (
                 <div className="mobile-menu">
-                    <div className="mobile brand">
+                    <div className="mobile-brand">
                         <h2>
                             <i className="nes-mario brand-logo"></i>
                             <p>Password Keeper</p>
@@ -154,15 +154,27 @@ const NavBar = ({ onContactClick, onMobileClick, onSearchClick, onAllClick, onFa
                     </div>
                     <div className="mobile-options">
                         {options.map((item, idx) => (
-                            <a
+                            <li>
+                                <a
                                 key={idx}
                                 onClick={item.onClick}
-                            >   
-                                <i>{item.icon}</i>
-                                {item.label}
+                                >   
+                                    <i>{item.icon} </i>
+                                    {item.label}
                             </a>
+                            </li>
+                            
                         ))}
                     </div>
+                    <div className="user-info">
+                        Welcome, <strong>{username}</strong>
+                    </div>
+                    <button className="nes-btn is-error"
+                            onClick={onLogOut}
+                    
+                    >
+                        Logout
+                    </button>
 
                 </div>
 

@@ -385,10 +385,10 @@ main {
   top: 0;
   right: 0;
 
-  width: 280px;
+  width: 400px;
   height: 100vh;
 
-  background: whitesmoke;
+  background: #111111;
   border-left: 1px solid wheat;
   
   z-index: 90;
@@ -398,12 +398,20 @@ main {
   display: flex;
   flex-direction: column;
   justify-content:center;
-  
+  list-style: none;
   gap: 2rem;
+}
+
+.mobile-options li:hover {
+  color: #d0d0d0;
+  transform: translateY(1px);
+  transition: transform .15s ease;
+  list-style: none;
 }
 
 .mobile-brand {
   text-align: center;
+  color: #d0d0d0;
 }
 
 .mobile-button {
@@ -873,6 +881,10 @@ label:hover .tool-tip {
     color: #2196f3;
     font-size:medium;
     // justify-content: center;
+  }
+
+  .user-info {
+    color:#f2f2f2
   }
 }
 
