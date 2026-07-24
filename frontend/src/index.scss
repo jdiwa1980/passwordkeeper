@@ -825,8 +825,7 @@ label:hover .tool-tip {
   }
   .accordion-group {
     width: calc(100% - 5rem);
-    // max-width: 100%;
-    // padding: 0 2rem;
+    overflow:hidden;
   }
   .nes-table {
     font-size: 0.55rem;
@@ -853,6 +852,7 @@ label:hover .tool-tip {
 
   .nav-bar {
     position: relative;
+    min-width: 100%;
     min-height: 60px;
   }
 
