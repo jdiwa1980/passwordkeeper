@@ -54,7 +54,7 @@ main {
   gap: 1rem;
 }
 
-.nes-container.register {
+.nes-container {
       border: none;
       box-shadow: none;
 }
@@ -131,6 +131,7 @@ main {
     border: 1px solid black;
     width: 90%;
     max-width: 600px;
+    height: 80%;
     
     
     box-shadow: $shadow;

@@ -56,8 +56,8 @@ const Register = () => {
 
     return ( 
         <div className="feedback-login">
-            <div className="nes-container register is-centered with-title">
-                <p className="title">
+            <div className="nes-container is-centered">
+                <p>
                      Register
                 </p> 
                 <form onSubmit={handleSubmit} className="feedback-body" autoComplete="off">
@@ -69,9 +69,10 @@ const Register = () => {
                         
                     </div>
                     <div className="nes-field is-inline">
-                        <label htmlFor="inline_field">   email***</label>
+                        <label htmlFor="inline_field">email</label>
                         <input type="email" 
-                                id="name_field" 
+                                id="name_field"
+                                placeholder="email" 
                                 className="nes-input"
                                 value={formData.email}
                                 onChange={(e) => setFormData({...formData, email: e.target.value})}
@@ -82,7 +83,8 @@ const Register = () => {
                         <label htmlFor="inline_field">username</label>
                         <input type="text" 
                                 id="name_field" 
-                                className="nes-input" 
+                                className="nes-input"
+                                placeholder="username"
                                 value={formData.username}
                                 onChange={(e) => setFormData({...formData, username: e.target.value})}
                                 required
@@ -94,6 +96,7 @@ const Register = () => {
                         <InputField type="text" 
                                     id="name_field" 
                                     className="nes-input" 
+                                    placeholder="password"
                                     value={formData.password}
                                     onChange={(e) => setFormData({...formData, password: e.target.value})}
                                     required
