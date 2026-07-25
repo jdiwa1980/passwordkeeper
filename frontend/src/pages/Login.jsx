@@ -46,16 +46,18 @@ const Login = () => {
     return (  
         <div className="feedback-login">
             <div className="nes-field">
-                    <section className="message-list">
+                    <div className="message">
                         <section className="message -left">
-                            {/* Octocat  */}
-                            <i className="nes-octocat animate"></i>
                             {/* Balloon  */}
                             <div className="nes-balloon from-left">
                                 <p>Login to Password Keeper</p>
                             </div>
+                            {/* Octocat  */}
+                            <i className="nes-octocat animate"></i>
+                            
                         </section>
-                    </section>
+                    </div>
+                        
                 <form onSubmit={handleSubmit} className="feedback-body" autoComplete="off">
                     <input type="email" 
                            className="nes-input"

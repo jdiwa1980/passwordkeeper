@@ -57,16 +57,16 @@ const Register = () => {
     return ( 
         <div className="feedback-login">
             <div className="nes-container is-centered">
-                <p>
-                     Register
-                </p> 
+                 
                 <form onSubmit={handleSubmit} className="feedback-body" autoComplete="off">
                     <div className="nav-brand">
                         <a href="http://localhost:5173/">
                             <p>Password Keeper</p>
                             <i className="nes-logo"></i>
                         </a>
-                        
+                        <p>
+                            Register
+                        </p>
                     </div>
                     <div className="nes-field is-inline">
                         <label htmlFor="inline_field">email</label>

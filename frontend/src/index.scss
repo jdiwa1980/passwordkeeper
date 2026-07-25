@@ -86,20 +86,14 @@ main {
       color: red;
     }
 
-    .message {
-      // display: inline-block;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 1rem;
-      gap: 1rem;
+    // .message {
+    //   padding: 10rem;
+    //   gap: 1rem;
 
-      i {
-        padding-right: 1rem;
-      }
-    }
+    //   i {
+    //     padding-right: 1rem;
+    //   }
+    // }
 
     
   }
@@ -131,7 +125,7 @@ main {
     border: 1px solid black;
     width: 90%;
     max-width: 600px;
-    height: 800px;
+    height: 665px;
     
     
     box-shadow: $shadow;
@@ -164,6 +158,11 @@ main {
   
 }
 
+.message {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+}
 
 
 .modal-overlay {
