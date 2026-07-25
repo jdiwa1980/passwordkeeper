@@ -826,8 +826,8 @@ label:hover .tool-tip {
   }
   .accordion-group {
     width: 100%;
-    max-width: 375px;
-    // width: calc(100% - 1rem);
+    max-width: calc(100% - 5rem);
+    // width: 
     // overflow:hidden;
   }
 
