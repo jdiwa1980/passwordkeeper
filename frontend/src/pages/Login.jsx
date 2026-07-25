@@ -53,7 +53,7 @@ const Login = () => {
                                 <p>Login to Password Keeper</p>
                             </div>
                             {/* Octocat  */}
-                            <i className="nes-octocat animate"></i>
+                            <i className="nes-octocat"></i>
                             
                         </section>
                     </div>
