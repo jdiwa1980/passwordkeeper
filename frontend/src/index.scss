@@ -125,7 +125,7 @@ main {
     border: 1px solid black;
     width: 90%;
     max-width: 600px;
-    height: 665px;
+    max-height: 665px;
     
     
     box-shadow: $shadow;
@@ -829,14 +829,7 @@ label:hover .tool-tip {
     // width: calc(100% - 1rem);
     // overflow:hidden;
   }
-  .nes-table {
-    font-size: 0.55rem;
-  }
 
-  .nes-table th,
-  .nes-table td {
-    padding: 0.25rem;
-  }
   .actions button {
     padding: 0.25rem;
     min-width: auto;
