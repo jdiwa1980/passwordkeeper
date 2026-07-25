@@ -125,7 +125,7 @@ main {
     border: 1px solid black;
     width: 90%;
     max-width: 600px;
-    max-height: 665px;
+    max-height: 100vh;
     
     
     box-shadow: $shadow;
@@ -825,7 +825,8 @@ label:hover .tool-tip {
     flex-direction: column;
   }
   .accordion-group {
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
     // width: calc(100% - 1rem);
     // overflow:hidden;
   }
@@ -907,6 +908,16 @@ label:hover .tool-tip {
     transform:translateY(1.5px);
     transition: transform .15s ease;
   } 
+
+  .feedback-login {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+
+        width: 92%;
+        margin: 2rem auto;
+    }
 }
 
 
