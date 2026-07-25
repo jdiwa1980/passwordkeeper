@@ -107,10 +107,10 @@ const Register = () => {
                     {success && <span className="nes-text is-success">{success}</span>}
                     {error &&  <span className="nes-text is-error">
                                         {error}.{""}
-                                        <Link to="/">
-                                                login here
-                                        </Link>
                                 </span>}
+                                <Link to="/">
+                                    login here
+                                </Link>
                 </form>
             </div>
         </div>
